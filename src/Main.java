@@ -6,12 +6,13 @@ public class Main {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<Contact> contacts = new ArrayList<Contact>();
+        ArrayList<String> phones = new ArrayList<String>();
 
         while (true) {
             System.out.println("Введите команду из списка:" + "\n" +
                     "1 - для создание контакта;" + "\n" +
-                    "2 - вывод контактов на экран" + "\n" +
-                    "3 - удаление контакта" + "\n" +
+                    "2 - вывод контактов на экран;" + "\n" +
+                    "3 - удаление контакта;" + "\n" +
                     "4 - прекращеие ввода;");
             int command = Integer.parseInt(reader.readLine());
             if (command == 1) {
@@ -21,7 +22,6 @@ public class Main {
                 contact.setPhone(reader.readLine());
                 contact.setEmail(reader.readLine());
                 contacts.add(contact);
-                System.out.println("Контакт добавлен");
                 for (int j = 0; j < contacts.size() - 1; j++) {
                     for (int i = 0; i < contacts.size() - 1 - j; i++) {
                         int minLenght = contacts.get(i).getName().length();
@@ -42,8 +42,8 @@ public class Main {
                         }
                     }
                 }
-            }
-            else if (command == 2) {
+                System.out.println("Контакт добавлен/");
+            } else if (command == 2) {
                 for (int i = 0; i < contacts.size(); i++) {
                     System.out.println("Список контактов:" + "\n" + "Имя: " + contacts.get(i).getName() + "; Телефон: " +
                             contacts.get(i).getPhone() + "; Электронный адрес: " + contacts.get(i).getEmail() + ";");
@@ -56,9 +56,9 @@ public class Main {
                         contacts.remove(i);
                     }
                 }
-                System.out.println("Контакт " + remover + " удалён");
+                System.out.println("Контакт " + remover + " удалён/");
             } else if (command == 4) {
-                System.out.println("Я устал, я ухожу.");
+                System.out.println("Добавление контактов с");
                 break;
             } else {
                 System.out.println("Неверная команда.");

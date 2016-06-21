@@ -3,10 +3,9 @@ public class Contact {
 
     }
 
-    private String name;
-    private String phone;
-    private String email;
-    private int age;
+    protected String name;
+    protected String phone;
+    protected String email;
 
     public void print() {
         System.out.println(string());
